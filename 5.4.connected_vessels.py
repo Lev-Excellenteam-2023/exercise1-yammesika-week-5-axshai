@@ -5,7 +5,8 @@ def interleave(*iterables):
     :return: A list of items interleaved from the input iterables
     """
     result_list = []
-    [result_list.extend(zip_item) for zip_item in list(zip(*iterables))]
+    for zip_item in list(zip(*iterables)):
+        result_list.extend(zip_item)
     return result_list
 
 
@@ -21,3 +22,10 @@ def generator_interleave(*iterables):
         for item in iterable:
             result_list.append(item)
             yield result_list
+
+
+if __name__ == "__main__":
+    print(f"interleave example:\n{interleave('abc', [1, 2, 3], ('!', '@', '#'))}")
+    print("generator_interleave example:")
+    for intermediate_list in generator_interleave('abc', [1, 2, 3], ('!', '@', '#')):
+        print(intermediate_list)
