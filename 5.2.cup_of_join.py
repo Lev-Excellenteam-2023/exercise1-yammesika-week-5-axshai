@@ -13,3 +13,7 @@ def join(*lists, sep="-"):
         result_list += lst
         result_list.append(sep)
     return result_list[:-1]
+
+
+if __name__ == "__main__":
+    print(join([1, 2, 3], [4, 5, 6], [7, 8, 9]))
