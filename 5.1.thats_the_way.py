@@ -9,5 +9,9 @@ def find_deep_files(path):
     :param path: The directory to search in.
     :return: A list of filenames that start with 'deep' in the specified directory.
     """
-    print(os.listdir(path))
     return [item for item in os.listdir(path) if os.path.isfile(os.path.join(path, item)) and item.startswith(DEEP_STR)]
+
+
+if __name__ == "__main__":
+    input_path = input("enter the path")
+    find_deep_files(input_path)
