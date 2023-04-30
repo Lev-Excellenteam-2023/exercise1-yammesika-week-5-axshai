@@ -13,3 +13,7 @@ def get_recipe_price(prices, optionals=None, **ingredients):
         if item not in optionals:
             total_price += ingredients[item] / 100 * price_for_100_gram
     return total_price
+
+
+if __name__ == "__main__":
+    print(get_recipe_price({'chocolate': 18, 'milk': 8}, chocolate=200, milk=100))
